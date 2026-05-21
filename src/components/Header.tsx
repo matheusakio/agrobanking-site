@@ -7,6 +7,7 @@ import Image from 'next/image'
 const navItems = [
   { label: 'Home', href: '#home' },
   { label: 'Sobre', href: '#sobre' },
+  { label: 'Soluções 360°', href: '#solucoes360' },
   { label: 'Serviços', href: '#servicos' },
   { label: 'Diferenciais', href: '#diferenciais' },
   { label: 'Contato', href: '#contato' },
@@ -33,18 +34,18 @@ export default function Header() {
     >
       <div className="mx-auto flex h-24 w-full max-w-[1280px] items-center justify-between px-8 lg:px-10">
         <a href="#home" className="flex shrink-0 items-center">
-         <Image
-  src="/images/logo.png"
-  alt="Agrobanking Brasil"
-  width={255}
-  height={108}
-  priority
-  unoptimized
-  className="block h-auto w-[255px] object-contain"
-/>
+          <Image
+            src="/images/logo.png"
+            alt="Agrobanking Brasil"
+            width={255}
+            height={108}
+            priority
+            unoptimized
+            className="block h-auto w-[255px] object-contain"
+          />
         </a>
 
-        <nav className="hidden items-center gap-10 lg:flex">
+        <nav className="hidden items-center gap-8 lg:flex">
           {navItems.map((item) => (
             <a
               key={item.label}
@@ -76,20 +77,20 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-[#062D1D]/95 backdrop-blur-md border-t border-[#C7A441]/20">
+        <div className="border-t border-[#C7A441]/20 bg-[#062D1D]/95 backdrop-blur-md lg:hidden">
           <div className="mx-auto flex max-w-[1280px] flex-col gap-4 px-8 py-6">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-[15px] font-medium text-white/90 hover:text-[#C7A441] transition-colors"
+                className="text-[15px] font-medium text-white/90 transition-colors hover:text-[#C7A441]"
               >
                 {item.label}
               </a>
             ))}
+
             <a
               href="https://wa.me/61993097000"
               target="_blank"
